@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+  background-color: #f5f5f5;
+  color: #555;
+  font-size: 1rem;
+  text-align: center;
+  user-select: none;
+}
+
+.app {
+  margin: 20px;
+}
+
+.languages-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 150px);
+  justify-content: center;
+  grid-gap: 20px;
+  margin: 30px auto;
+}
+
+.language {
+  width: 150px;
+  height: 100px;
+}
+
+.language input {
+  display: none;
+}
+
+.language label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background: #ffffff;
+  border: 2px solid #ddd;
+  box-shadow: 0px 5px 20px 2px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+}
+
+.language label i {
+  font-size: 30px;
+}
+
+.language label .title {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.language label::before {
+  content: "\2713";
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 18px;
+  height: 18px;
+  background-color: #185adb;
+  color: #ffffff;
+  font-size: 14px;
+  line-height: 18px;
+  border-radius: 50%;
+  font-weight: bold;
+  transform: scale(0.5);
+  transition: all 200ms ease-in-out;
+  opacity: 0;
+}
+
+.language input:checked + label {
+  border: 2px solid #185adb;
+  color: #185adb;
+}
+
+.language input:checked + label::before {
+  transform: scale(1);
+  opacity: 1;
+}
